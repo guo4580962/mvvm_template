@@ -2,9 +2,12 @@
 <idea-plugin>
     <id>com.github.guo4580962.mvvmtemplate</id>
     <name>mvvm_template</name>
-    <vendor>guo4580962</vendor>
+    <vendor>gsj</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
@@ -15,4 +18,8 @@
     <applicationListeners>
         <listener class="com.github.guo4580962.mvvmtemplate.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="com.github.other.SamplePluginTemplateProviderImpl" />
+    </extensions>
+
 </idea-plugin>
